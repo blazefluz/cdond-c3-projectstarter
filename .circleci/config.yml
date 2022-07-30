@@ -14,7 +14,7 @@ commands:
   destroy-environment:
     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
     parameters:
-      # Add parameter here   
+      # Add parameter here
       workflow_id:
         default: "${CIRCLE_WORKFLOW_ID:0:7}"
         type: string
@@ -40,14 +40,14 @@ commands:
           name: Revert migrations
           # Add when this will run
           command: |
-           # Curl command here to see if there was a successful migration associated with the workflow id, store result in SUCCESS variable
-            SUCCESS=$(curl --insecure "https://kvdb.io/GihzLn9tKaS8UmwtTTnRhb/migration_<<parameters.workflow_id>>")
-            if(( $SUCCESS==1 )); 
-            then
-              cd ~/project/backend
-              npm install
-              npm run migrations:revert
-            fi
+            # Curl command here to see if there was a successful migration associated with the workflow id, store result in SUCCESS variable
+             SUCCESS=$(curl --insecure "https://kvdb.io/GihzLn9tKaS8UmwtTTnRhb/migration_<<parameters.workflow_id>>")
+             if(( $SUCCESS==1 )); 
+             then
+               cd ~/project/backend
+               npm install
+               npm run migrations:revert
+             fi
 
 jobs:
   build-frontend:
@@ -180,8 +180,7 @@ jobs:
               --stack-name "udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  \
               --tags project=udapeople
-            
-              
+
       - run:
           name: Ensure front-end infrastructure exist
           command: |
@@ -190,8 +189,7 @@ jobs:
               --stack-name "udapeople-frontend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  \
               --tags project=udapeople
-            
-              
+
       - run:
           name: Add back-end ip to ansible inventory
           command: |
@@ -209,7 +207,6 @@ jobs:
             # )
             # echo ${BACKEND_IP}
 
-            
       - persist_to_workspace:
           root: ~/
           paths:
@@ -226,9 +223,9 @@ jobs:
             - "f7:36:15:c1:2b:b2:dc:25:a3:4c:cd:4d:89:79:64:be"
       - attach_workspace:
           at: ~/
-    
-      - install_ansible    
-      
+
+      - install_ansible
+
       - run:
           name: Configure server
           command: |
@@ -237,8 +234,6 @@ jobs:
             cat inventory.txt
             ansible-playbook -i inventory.txt configure-server.yml
       - destroy-environment
-      
-    
 
   run-migrations:
     docker:
@@ -256,14 +251,12 @@ jobs:
       - run:
           name: Send migration results to kvdb
           command: |
-            # Your code here
             if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
             then
              curl --insecure https://kvdb.io/Mmm2vtPJczK9gfp8DrKSn2/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
             fi
-      - destroy-environment 
+      - destroy-environment
       - revert-migrations
-     # Here's where you will add some code to rollback on failure
 
   # deploy-frontend:
   #   docker:
