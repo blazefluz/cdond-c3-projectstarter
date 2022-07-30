@@ -192,7 +192,7 @@ jobs:
             # )
             # echo ${BACKEND_IP}
 
-            exit 1
+            
       - persist_to_workspace:
           root: ~/
           paths:
