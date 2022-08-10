@@ -407,6 +407,7 @@ jobs:
       #     keys: [backend-build]
       - install_nodejs
       - install_awscli
+      - install_ansible
       - run:
           name: Backend smoke test.
           command: |
