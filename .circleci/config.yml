@@ -400,20 +400,13 @@ jobs:
 
   smoke-test:
     docker:
-      # - image: cimg/base:stable
-      - image: python:3.7-alpine3.11
+      - image: cimg/base:stable
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: |
-            apk add --update curl
-            pip install awscli
       # - restore_cache:
       #     keys: [backend-build]
-      # - install_nodejs
-      # - install_awscli
-      # - install_ansible
+      - install_nodejs
+      - install_awscli
       # - run:
       #     name: Backend smoke test.
       #     command: |
