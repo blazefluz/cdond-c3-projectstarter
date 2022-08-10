@@ -24,6 +24,10 @@
       raw: test -e /usr/bin/python3 || (apt -y update && apt install -y python3)
       changed_when: false
 
+    
+     
+
+
   # Get the environment variables from CircleCI and add to the EC2 instance
   environment:
     - TYPEORM_CONNECTION: "{{ lookup('env', 'TYPEORM_CONNECTION')}}"  
@@ -40,5 +44,5 @@
 
   roles:
     # Your code here
-    - configure-server
-    - configure-prometheus-node-exporter
+     - configure-server
+     - configure-prometheus-node-exporter
