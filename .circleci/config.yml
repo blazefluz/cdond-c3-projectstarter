@@ -400,7 +400,7 @@ jobs:
 
   smoke-test:
     docker:
-      - image: cimg/base:stable
+      - image: python:3.7-alpine3.11
     steps:
       - checkout
      
@@ -419,8 +419,10 @@ jobs:
               echo ${API_URL}
               if curl -s $API_URL/api/status | grep "ok"
               then
+                echo "Backend Smoke Test Success"
                 exit 0
               else
+                echo "Backend Smoke Test Failed"
                 exit 1
               fi
       - run:
@@ -430,6 +432,7 @@ jobs:
               echo $FRONTEND_WEBSITE
               if curl -s $FRONTEND_WEBSITE | grep "Welcome"
               then
+                echo "Frontend Smoke Test Success"
                 exit 0
               else
                 exit 1
