@@ -487,15 +487,15 @@ jobs:
             at: ~/
       - install_awscli
       # - run: yum install -y tar gzip
-      - run:
-          name: Get old stack workflow id
-          command: |
-            export STACKS=($(aws cloudformation list-stacks \
-                --query "StackSummaries[*].StackName" \
-                --stack-status-filter CREATE_COMPLETE --no-paginate --output text)) 
-            echo Stack names: "${STACKS[@]}"
-            export OldWorkflowID=$(curl --insecure https://kvdb.io/Mmm2vtPJczK9gfp8DrKSn2/old_workflow_id)
-            echo Old Workflow ID: $OldWorkflowID
+      # - run:
+      #     name: Get old stack workflow id
+      #     command: |
+      #       export STACKS=($(aws cloudformation list-stacks \
+      #           --query "StackSummaries[*].StackName" \
+      #           --stack-status-filter CREATE_COMPLETE --no-paginate --output text)) 
+      #       echo Stack names: "${STACKS[@]}"
+      #       export OldWorkflowID=$(curl --insecure https://kvdb.io/Mmm2vtPJczK9gfp8DrKSn2/old_workflow_id)
+      #       echo Old Workflow ID: $OldWorkflowID
       - run:
           name: Remove old stacks and files
           command: |
