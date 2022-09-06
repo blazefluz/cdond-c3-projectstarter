@@ -276,7 +276,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "f7:36:15:c1:2b:b2:dc:25:a3:4c:cd:4d:89:79:64:be"
+            - "e1:77:eb:9f:40:6f:b5:c3:ef:ea:43:65:dd:ea:3f:1b"
       - attach_workspace:
           at: ~/
     
@@ -328,7 +328,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints: 
-            - "f7:36:15:c1:2b:b2:dc:25:a3:4c:cd:4d:89:79:64:be"
+            - "e1:77:eb:9f:40:6f:b5:c3:ef:ea:43:65:dd:ea:3f:1b"
       - attach_workspace:
           at: ~/
 
@@ -371,7 +371,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: 
-            - "f7:36:15:c1:2b:b2:dc:25:a3:4c:cd:4d:89:79:64:be"
+            - "e1:77:eb:9f:40:6f:b5:c3:ef:ea:43:65:dd:ea:3f:1b"
       - attach_workspace:
           at: ~/
       - install_nodejs

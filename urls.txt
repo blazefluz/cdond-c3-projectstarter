@@ -1,0 +1,7 @@
+https://github.com/blazefluz/cdond-c3-projectstarter (URL01)
+
+https://d1prioe8gtifnt.cloudfront.net
+
+S3 BUCKET (URL02)
+
+http://udapeople-07fda3c.s3-website-us-east-1.amazonaws.com/#/employees
