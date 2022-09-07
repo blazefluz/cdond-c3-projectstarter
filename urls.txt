@@ -14,4 +14,4 @@ backend
 http://ec2-44-206-237-66.compute-1.amazonaws.com:3030/api/status
 
 Public URL to your Prometheus Server [URL05]
-http://ec2-54-205-21-102.compute-1.amazonaws.com:9090/graph
+http://ec2-54-205-21-102.compute-1.amazonaws.com:9090
