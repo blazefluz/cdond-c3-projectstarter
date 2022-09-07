@@ -436,7 +436,7 @@ jobs:
               if curl -s $FRONTEND_WEBSITE | grep "Welcome"
               then
                 echo "Frontend Smoke Test Success"
-                exit 1
+                exit 0
               else
                 exit 1
               fi
