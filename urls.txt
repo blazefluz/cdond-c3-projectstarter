@@ -1,7 +1,17 @@
-https://github.com/blazefluz/cdond-c3-projectstarter (URL01)
+Public URL to GitHub repository (not private) [URL01] 
+https://github.com/blazefluz/cdond-c3-projectstarter 
 
-https://d1prioe8gtifnt.cloudfront.net
+
 
 S3 BUCKET (URL02)
 
-http://udapeople-07fda3c.s3-website-us-east-1.amazonaws.com/#/employees
+http://udapeople-d406921.s3-website-us-east-1.amazonaws.com
+
+Cloudfront
+http://dtn8m31tfydxz.cloudfront.net/#/employees
+
+backend
+http://ec2-44-206-237-66.compute-1.amazonaws.com:3030/api/status
+
+Public URL to your Prometheus Server [URL05]
+http://ec2-54-205-21-102.compute-1.amazonaws.com:9090/graph
